@@ -25,10 +25,10 @@ RUN apt-get update && apt-get -y remove exim && apt-get -y install \
         libbsd-dev\
         imagemagick \
         libpq-dev \
-        lua5.3 \
-        liblua5.3-0 \
-        liblua5.3-0-dbg \
-        liblua5.3-dev \
+        lua5.2 \
+        liblua5.2-0 \
+        liblua5.2-0-dbg \
+        liblua5.2-dev \
         mercurial \
         python-pip \
         pmake \
@@ -92,7 +92,7 @@ FROM debian:buster-slim
 
 RUN apt-get update && apt-get install --no-install-recommends -y\
                                       msmtp-mta imagemagick python3-pip\
-                                      liblua5.3-0 postgresql-client\
+                                      liblua5.2-0 postgresql-client\
  && pip3 install markdown2
 
 COPY --from=builder /opt/lf /opt/lf
